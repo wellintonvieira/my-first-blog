@@ -26,7 +26,7 @@ p{
 
 .login-buttons input {
     margin: 2px;
-    width: 120px;
+    width: 260px;
     height: 40px;
 }
 
@@ -35,7 +35,7 @@ p{
     clear: both;
 }
 
-.login-error {
+.login-error p{
     text-align: center;
 }
 
