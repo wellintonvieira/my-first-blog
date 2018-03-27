@@ -39,6 +39,11 @@ p{
     text-align: center;
 }
 
+.login label {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;    
+}
+
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
@@ -59,10 +64,6 @@ h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
 
-label {
-    font-family: 'Lobster', cursive;
-    font-size: 50px;    
-}
 
 .date {
     color: #828282;
