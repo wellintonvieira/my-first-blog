@@ -1,6 +1,6 @@
 body {
 	margin: auto;
-    padding-left: 15px;
+    padding-left: 50px;
 }
 
 h1 a {
@@ -10,6 +10,33 @@ h1 a {
 
 p{
 	text-align: justify;
+}
+
+.login {
+    padding: 20px;
+    font-size: 20px;
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    border: 1px solid;
+    border-color: #FCA205;    
+    border-radius: 10px;
+}
+
+.login-buttons input {
+    margin: 2px;
+    width: 120px;
+    height: 40px;
+}
+
+.login-fields {
+    padding: 10px;
+    clear: both;
+}
+
+.login-error {
+    text-align: center;
 }
 
 .page-header {
@@ -30,6 +57,11 @@ p{
 
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
+}
+
+label {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;    
 }
 
 .date {
