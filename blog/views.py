@@ -5,10 +5,6 @@ from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def post_new(request):
-    [...]
-
-@login_required
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()

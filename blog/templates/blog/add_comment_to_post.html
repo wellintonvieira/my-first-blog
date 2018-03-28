@@ -1,9 +1,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>New comment</h1>
+    <h1>Novo Comentário</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Send</button>
+        <button type="submit" class="save btn btn-default glyphicon glyphicon-save">Salvar</button>
+        <button type="reset" class="btn btn-default float btn-warning glyphicon glyphicon-remove">Limpar</button>
     </form>
 {% endblock %}
