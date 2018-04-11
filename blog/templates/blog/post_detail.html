@@ -20,7 +20,9 @@
         <p>{{ post.text|linebreaksbr }}</p>
 
     <hr>
-        <a class="btn btn-default edits btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"> Comentar</span></a><br><br>
+        <a class="btn btn-default edits btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"> Comentar</span></a>
+
+        <a href="{% url 'contato' %}" class="btn btn-default edits btn-warning"><span class="glyphicon glyphicon-pencil"> Enviar E-mail</span></a>
 
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}

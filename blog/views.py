@@ -1,8 +1,9 @@
+from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, Comment
-from .forms import PostForm, CommentForm
-from django.contrib.auth.decorators import login_required
+from .forms import PostForm, CommentForm, ContatoForm
 
 @login_required
 def comment_approve(request, pk):
@@ -82,3 +83,23 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+def contato(request):
+    if request.method == 'GET':
+        email_form = ContatoForm()
+    else:
+        email_form = ContatoForm(request.POST)
+        if email_form.is_valid():
+            emissor = email_form.cleaned_data['emissor']
+            assunto = email_form.cleaned_data['assunto']
+            msg = email_form.cleaned_data['msg']
+
+            try:
+                send_mail(assunto, msg, emissor, ['wellinton.notnillew@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse("Erro =/")
+            return redirect('obg')
+    return render(request, 'blog/email.html', {'form': email_form})
+
+def obg(request):
+    return HttpResponse("<h2>Obrigado pela mensagem!</h2>")
